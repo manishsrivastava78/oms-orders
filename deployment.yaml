@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oms-order
+  namespace: order-domain
+  labels:
+    app: oms-order
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oms-order
+  template:
+    metadata:
+      labels:
+        app: oms-order
+    spec:
+      containers:
+      - name: oms-order
+        image: manishsrivastavaggn/oms-order:changeMePlease
+        ports:
+        - containerPort: 8080
+   
