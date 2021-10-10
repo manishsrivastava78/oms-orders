@@ -51,13 +51,11 @@ public class PurchaseOrder implements Serializable{
 	}
 
 	public int getOrderid() {
-		System.out.println("getter orderid="+orderid);
 		return orderid;
 	}
 
 	public void setOrderid(int orderid) {
 		this.orderid = orderid;
-		System.out.println("setter orderid="+orderid);
 	}
 
 	public int getCustomerid() {

@@ -15,13 +15,13 @@ import com.tcs.eas.rest.apis.log.MdcLogging;
 @Component
 public class ServiceInterceptor extends MdcLogging implements HandlerInterceptor {
 	
-	//@Autowired
-	//LoggingService loggingService;
+	@Autowired
+	LoggingService loggingService;
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		//loggingService.logRequest(request, handler);
+		loggingService.logRequest(request, handler);
 		return true;
 	}
 
@@ -29,14 +29,14 @@ public class ServiceInterceptor extends MdcLogging implements HandlerInterceptor
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 
 			@Nullable ModelAndView modelAndView) throws Exception {
-		System.out.println("---method executed---");
+		//System.out.println("---method executed---");
 	}
 
 	@Override
 	public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object body, Exception ex)
 			throws Exception {
 
-		System.out.println("---Request Completed---" + httpServletResponse.getStatus() + " " + httpServletRequest.getRequestURI());
+		//System.out.println("---Request Completed---" + httpServletResponse.getStatus() + " " + httpServletRequest.getRequestURI());
 		// response.getWriter();
 		//loggingService.logResponse(httpServletRequest, httpServletResponse, body);
 	}
